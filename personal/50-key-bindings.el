@@ -1,4 +1,4 @@
-;; cycle whitespace
+ ;; cycle whitespace
 (global-set-key [remap just-one-space] 'cycle-spacing)
 
 ;; ace window

@@ -4,6 +4,7 @@
                             yasnippet
                             helm-swoop
                             helm-c-yasnippet
+			    solarized-theme
                             rspec-mode))
 ;;
 ;; ace-window
@@ -80,6 +81,9 @@
 (setq helm-completion-region-fuzzy-match t)
 (setq helm-yas-display-key-on-candidate t)
 (setq helm-buffer-max-length nil)
+(setq helm-swoop-pre-input-function (lambda () nil))
+(setq helm-swoop-speed-or-color t)
+(setq helm-swoop-split-direction 'split-window-horizontally)
 
 ;;
 ;; avy jump
@@ -102,3 +106,8 @@
 ;; rspec
 ;;
 (setq rspec-use-rake-when-possible nil)
+
+;;
+;; diff-hl
+;;
+(global-diff-hl-mode -1)

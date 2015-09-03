@@ -29,3 +29,11 @@
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date nil)
 (display-time)
+
+;; customize
+(custom-set-faces
+ '(aw-leading-char-face
+   ((t (:inherit ace-jump-face-foreground :weight bold :inverse-video t :foreground "red"))))
+ '(aw-background-face ((t (:foreground "gray65"))))
+ '(easy-kill-selection ((t (:background "gray"))))
+ '(sp-show-pair-match-face ((t (:foreground "#d33682" :inverse-video t :weight bold)))))
