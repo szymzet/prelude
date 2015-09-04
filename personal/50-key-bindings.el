@@ -1,6 +1,12 @@
  ;; cycle whitespace
 (global-set-key [remap just-one-space] 'cycle-spacing)
 
+;; skip the C-x for window splits
+(global-set-key (kbd "C-1") 'delete-other-windows)
+(global-set-key (kbd "C-2") 'split-window-below)
+(global-set-key (kbd "C-3") 'split-window-right)
+(global-set-key (kbd "C-o") 'other-window)
+
 ;; ace window
 (global-set-key (kbd "C-j") 'ace-window) ; j == wJndow or j == Jump to window
 
