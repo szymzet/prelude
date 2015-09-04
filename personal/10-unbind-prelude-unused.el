@@ -5,3 +5,4 @@
 (define-key prelude-mode-map (kbd "C-c G") nil)
 (define-key prelude-mode-map (kbd "C-c TAB") nil)
 (define-key prelude-mode-map (kbd "C-c y") nil)
+(define-key prelude-mode-map (kbd "M-o") nil)
