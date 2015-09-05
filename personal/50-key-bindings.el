@@ -45,11 +45,12 @@
 ;; keychords
 ;;
 (key-chord-define-global "3j" 'avy-goto-word-or-subword-1)
+(key-chord-define-global "fj" 'avy-goto-char-2)
 (key-chord-define-global "3o" 'helm-swoop)
 (key-chord-define-global "3k" 'kill-buffer)
 (key-chord-define-global "9b" 'helm-mini)
-(key-chord-define-global "9s" 'helm-projectile-ag)
-(key-chord-define-global "9f" 'helm-projectile-find-file)
+(key-chord-define-global "9s" 'helm-do-ag-project-root)
+(key-chord-define-global "9f" 'helm-ls-git-ls)
 (key-chord-define-global "9w" 'save-buffer)
 (key-chord-define-global "9r" 'anzu-query-replace-regexp)
 (key-chord-define-global "9t" 'delete-trailing-whitespace)

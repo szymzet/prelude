@@ -4,24 +4,15 @@
                             yasnippet
                             helm-swoop
                             helm-c-yasnippet
+                            helm-ls-git
 			    solarized-theme
                             rspec-mode))
-;;
-;; ace-window
-;;
 (setq aw-dispatch-always t)
 (setq aw-dispatch-alist
       '((?x aw-delete-window " Ace - Delete Window")
-        ;; (?q delete-window)
-        ;; (?w aw-swap-window " Ace - Swap Window")
-        ;; (?n aw-flip-window)
         (?v split-window-below)
-        ;; (?_ aw-split-window-vert "Ace - Split Window Horizontally")
-        (?s split-window-right)
-        ;; (?| aw-split-window-horz "Ace - Split Window Vertically")
-        ;; (?m delete-other-windows)
-        ;; (?b balance-windows)
-        ))
+        (?b balance-windows)
+        (?s split-window-right)))
 (setq aw-keys '(?j ?k ?l ?\; ?f ?d))
 
 ;;
@@ -57,7 +48,6 @@
 ;;
 (setq smartparens-global-strict-mode nil)
 (setq smartparens-strict-mode nil)
-(setq sp-base-key-bindings nil)
 
 ;;
 ;; magit
@@ -82,8 +72,9 @@
 (setq helm-yas-display-key-on-candidate t)
 (setq helm-buffer-max-length nil)
 (setq helm-swoop-pre-input-function (lambda () nil))
-(setq helm-swoop-speed-or-color t)
+(setq helm-swoop-speed-or-color nil)
 (setq helm-swoop-split-direction 'split-window-horizontally)
+(setq helm-ls-git-show-abs-or-relative 'relative)
 
 ;;
 ;; avy jump
