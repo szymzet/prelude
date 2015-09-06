@@ -8,6 +8,9 @@
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "M-o") 'other-window)
 
+;; backspace is too far away
+(global-set-key (kbd "M-h") 'backward-kill-word)
+
 ;; new scratch buffer easily
 (global-set-key (kbd "C-c b") 'create-scratch-buffer)
 
