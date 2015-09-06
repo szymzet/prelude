@@ -70,3 +70,6 @@
 ;; magit, fullscreen
 (global-set-key (kbd "C-x g") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")
+
+;; dired
+(define-key dired-mode-map (kbd "k") 'dired-do-delete) ; cause it's used in most places
