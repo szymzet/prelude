@@ -65,10 +65,10 @@
 ;;
 ;; helm
 ;;
-(setq helm-M-x-fuzzy-match t)
-(setq helm-recentf-fuzzy-match t)
-(setq helm-projectile-fuzzy-match t)
-(setq helm-completion-region-fuzzy-match t)
+(setq helm-M-x-fuzzy-match nil)
+(setq helm-recentf-fuzzy-match nil)
+(setq helm-projectile-fuzzy-match nil)
+(setq helm-completion-region-fuzzy-match nil)
 (setq helm-yas-display-key-on-candidate t)
 (setq helm-buffer-max-length nil)
 (setq helm-swoop-pre-input-function (lambda () nil))
