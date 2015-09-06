@@ -54,6 +54,8 @@
 ;;
 (setq magit-auto-revert-mode nil)
 (setq magit-last-seen-setup-instructions "1.4.0")
+(set-default 'magit-unstage-all-confirm nil)
+(set-default 'magit-stage-all-confirm nil)
 
 ;;
 ;; company
