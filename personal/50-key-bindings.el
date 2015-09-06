@@ -3,10 +3,22 @@
 
 ;; skip the C-x for window splits
 (global-set-key (kbd "C-1") 'delete-other-windows)
-(global-set-key (kbd "C-2") 'split-window-below)
-(global-set-key (kbd "C-3") 'split-window-right)
+(global-set-key (kbd "C-2") 'split-window-below-and-move-there-dammit)
+(global-set-key (kbd "C-3") 'split-window-right-and-move-there-dammit)
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "M-o") 'other-window)
+
+;; new scratch buffer easily
+(global-set-key (kbd "C-c b") 'create-scratch-buffer)
+
+;; join lines (join line below with current)
+(global-set-key (kbd "M-j") 'prelude-top-join-line)
+
+;; Move more quickly
+(global-set-key (kbd "C-S-n") (lambda () (interactive) (ignore-errors (next-line 5))))
+(global-set-key (kbd "C-S-p") (lambda () (interactive) (ignore-errors (previous-line 5))))
+(global-set-key (kbd "C-S-f") (lambda () (interactive) (ignore-errors (forward-char 5))))
+(global-set-key (kbd "C-S-b") (lambda () (interactive) (ignore-errors (backward-char 5))))
 
 ;; ace window
 (global-set-key (kbd "C-j") 'ace-window) ; j == wJndow or j == Jump to window
@@ -54,3 +66,7 @@
 (key-chord-define-global "9w" 'save-buffer)
 (key-chord-define-global "9r" 'anzu-query-replace-regexp)
 (key-chord-define-global "9t" 'delete-trailing-whitespace)
+
+;; magit, fullscreen
+(global-set-key (kbd "C-x g") 'magit-status-fullscreen)
+(autoload 'magit-status-fullscreen "magit")
