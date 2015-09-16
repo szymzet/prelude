@@ -1,5 +1,4 @@
 (diminish 'company-mode)
-(diminish 'helm-mode)
 (diminish 'projectile-mode)
 (diminish 'smartparens-mode)
 (diminish 'flycheck-mode)

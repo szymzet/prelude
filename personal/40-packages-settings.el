@@ -2,11 +2,9 @@
                             highlight-symbol
                             comment-dwim-2
                             yasnippet
-                            helm-swoop
-                            helm-c-yasnippet
-                            helm-ls-git
 			    solarized-theme
                             rspec-mode))
+
 (setq aw-dispatch-always t)
 (setq aw-dispatch-alist
       '((?x aw-delete-window " Ace - Delete Window")
@@ -63,20 +61,6 @@
 (setq company-idle-delay 0)
 (setq company-show-numbers t)
 (setq company-minimum-prefix-length 3)
-
-;;
-;; helm
-;;
-(setq helm-M-x-fuzzy-match nil)
-(setq helm-recentf-fuzzy-match nil)
-(setq helm-projectile-fuzzy-match nil)
-(setq helm-completion-region-fuzzy-match nil)
-(setq helm-yas-display-key-on-candidate t)
-(setq helm-buffer-max-length nil)
-(setq helm-swoop-pre-input-function (lambda () nil))
-(setq helm-swoop-speed-or-color nil)
-(setq helm-swoop-split-direction 'split-window-horizontally)
-(setq helm-ls-git-show-abs-or-relative 'relative)
 
 ;;
 ;; avy jump

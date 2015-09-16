@@ -23,9 +23,6 @@
 (global-set-key (kbd "C-S-f") (lambda () (interactive) (ignore-errors (forward-char 5))))
 (global-set-key (kbd "C-S-b") (lambda () (interactive) (ignore-errors (backward-char 5))))
 
-;; ace window
-(global-set-key (kbd "C-j") 'ace-window) ; j == wJndow or j == Jump to window
-
 ;; gist
 (global-set-key (kbd "C-c g") 'gist-buffer-private)
 (global-set-key (kbd "C-c G") 'gist-list)
@@ -34,8 +31,6 @@
 (global-set-key (kbd "C-c TAB") 'company-complete-common)
 
 ;; yasnippet
-(global-set-key (kbd "C-c y") 'helm-yas-complete)
-(global-set-key (kbd "C-c Y") 'helm-yas-create-snippet-on-region)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map [(tab)] nil)
 (define-key yas-minor-mode-map [(control tab)] 'yas-expand)
@@ -61,11 +56,11 @@
 ;;
 (key-chord-define-global "3j" 'avy-goto-word-or-subword-1)
 (key-chord-define-global "fj" 'avy-goto-char-2)
-(key-chord-define-global "3o" 'helm-swoop)
+(key-chord-define-global "3o" 'occur)
 (key-chord-define-global "3k" 'kill-buffer)
-(key-chord-define-global "9b" 'helm-mini)
-(key-chord-define-global "9s" 'helm-do-ag-project-root)
-(key-chord-define-global "9f" 'helm-ls-git-ls)
+(key-chord-define-global "9b" 'ido-switch-buffer)
+(key-chord-define-global "9s" 'projectile-ag)
+(key-chord-define-global "9f" 'projectile-find-file)
 (key-chord-define-global "9w" 'save-buffer)
 (key-chord-define-global "9r" 'anzu-query-replace-regexp)
 (key-chord-define-global "9t" 'delete-trailing-whitespace)
