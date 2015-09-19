@@ -40,11 +40,3 @@
       ad-do-it)
     (dotimes (i 10)
       (when (= p (point)) ad-do-it))))
-
-;; customize
-(custom-set-faces
- '(aw-leading-char-face
-   ((t (:inherit ace-jump-face-foreground :weight bold :inverse-video t :foreground "red"))))
- '(aw-background-face ((t (:foreground "gray65"))))
- '(easy-kill-selection ((t (:background "gray"))))
- '(sp-show-pair-match-face ((t (:foreground "#d33682" :inverse-video t :weight bold)))))
