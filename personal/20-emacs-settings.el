@@ -2,8 +2,12 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; minimalistic mode line
+(size-indication-mode -1)
+(column-number-mode -1)
+
 (global-hl-line-mode 1)
-(global-linum-mode 1)
+(global-linum-mode -1)
 
 (setq echo-keystrokes 0.02)
 
@@ -15,7 +19,7 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose t)
 (setq delete-by-moving-to-trash t)
-(setq create-lockfiles nil) ; annoying .#file-namer
+(setq create-lockfiles nil) ; annoying .#file-name
 
 (setq-default sentence-end-double-space nil)
 
@@ -25,10 +29,6 @@
 (setq use-dialog-box nil)
 (setq visible-bell t)
 (setq blink-matching-paren t)
-
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date nil)
-(display-time)
 
 ;; When popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.
