@@ -30,7 +30,25 @@
 (setq visible-bell t)
 (setq blink-matching-paren t)
 
-;; When popping the mark, continue popping until the cursor actually moves
+;; mac modifier keys
+(setq mac-right-option-modifier nil) ; for Polish characters
+(setq mac-command-modifier 'meta)
+(setq mac-right-command-modifier 'meta)
+
+;; save system clipboard to kill ring
+(setq save-interprogram-paste-before-kill t)
+
+;; midnight.el config (auto killing of old buffers)
+(add-to-list 'clean-buffer-list-kill-never-regexps "\\*scratch.*\\*")
+(setq my-buffers-to-quickly-clean '("^\\*ag search"
+                                    "^\\*Occur\\*"
+                                    "^\\*Help\\*"
+                                    "^\\*Apropos\\*"
+                                    "^\\*Customize.*\\*"))
+(dolist (buffer-regexp my-buffers-to-quickly-clean)
+  (add-to-list 'clean-buffer-list-kill-regexps buffer-regexp))
+
+;; when popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.
 (defadvice pop-to-mark-command (around ensure-new-position activate)
   (let ((p (point)))

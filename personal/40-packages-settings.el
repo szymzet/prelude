@@ -5,13 +5,28 @@
 			    solarized-theme
                             rspec-mode))
 
-(setq aw-dispatch-always t)
-(setq aw-dispatch-alist
-      '((?x aw-delete-window " Ace - Delete Window")
-        (?v split-window-below)
-        (?b balance-windows)
-        (?s split-window-right)))
+;;
+;; ace-window
+;;
+(setq aw-dispatch-alist '((?x aw-delete-window " Ace - Delete Window")
+                          (?v split-window-below)
+                          (?b balance-windows)
+                          (?s split-window-right)))
 (setq aw-keys '(?j ?k ?l ?\; ?f ?d))
+
+;;
+;; ag
+;;
+(setq ag-highlight-search t)
+
+;;
+;; ido
+;;
+(when (package-installed-p 'ido-vertical-mode)
+    (progn
+      (setq ido-vertical-show-count t)
+      (ido-vertical-mode 1)
+      (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
 
 ;;
 ;; highlight-symbol
@@ -65,7 +80,11 @@
 ;;
 ;; avy jump
 ;;
-(avy-setup-default) ; C-' in isearch mode to jump to specific match
+(global-set-key (kbd "C-;") 'avy-goto-word-1)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+                                        ; go to an isearch match using avy
+(with-eval-after-load "isearch"
+  (define-key isearch-mode-map (kbd "C-;") 'avy-isearch))
 
 ;;
 ;; projectile

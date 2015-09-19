@@ -6,7 +6,7 @@
 (global-set-key (kbd "C-2") 'split-window-below-and-move-there-dammit)
 (global-set-key (kbd "C-3") 'split-window-right-and-move-there-dammit)
 (global-set-key (kbd "C-0") 'delete-window)
-(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-o") 'ace-window)
 
 ;; backspace is too far away
 (global-set-key (kbd "M-h") 'backward-kill-word)
