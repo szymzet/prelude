@@ -9,6 +9,8 @@
 (global-hl-line-mode 1)
 (global-linum-mode -1)
 
+(setq default-indicate-empty-lines t)
+
 (setq echo-keystrokes 0.02)
 
 (setq-default show-trailing-whitespace t)

@@ -1,9 +1,11 @@
 (prelude-require-packages '(gist
+                            ag
                             highlight-symbol
                             comment-dwim-2
                             yasnippet
 			    solarized-theme
                             rspec-mode))
+
 
 ;;
 ;; ace-window
@@ -23,10 +25,10 @@
 ;; ido
 ;;
 (when (package-installed-p 'ido-vertical-mode)
-    (progn
-      (setq ido-vertical-show-count t)
-      (ido-vertical-mode 1)
-      (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+  (progn
+    (setq ido-vertical-show-count t)
+    (ido-vertical-mode 1)
+    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
 
 ;;
 ;; highlight-symbol
