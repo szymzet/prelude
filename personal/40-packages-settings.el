@@ -109,3 +109,13 @@
 ;; diff-hl
 ;;
 (global-diff-hl-mode -1)
+
+
+;;
+;; faces
+;;
+(when (equal prelude-theme 'solarized-light)
+  (custom-set-faces
+   '(flx-highlight-face ((t (:foreground "#268bd2" :underline t :weight bold))))
+   '(sp-show-pair-match-face ((t (:underline t))))
+   '(aw-leading-char-face ((t (:foreground "#d33682" :inverse-video t :bold t :height 1.3))))))
