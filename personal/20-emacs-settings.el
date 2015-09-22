@@ -32,6 +32,13 @@
 (setq visible-bell t)
 (setq blink-matching-paren t)
 
+(setq dired-listing-switches "-alh")
+
+;;
+;; grepping
+;;
+(setq grep-highlight-matches t)
+
 ;; mac modifier keys
 (setq mac-right-option-modifier nil) ; for Polish characters
 (setq mac-command-modifier 'meta)
