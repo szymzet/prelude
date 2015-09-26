@@ -4,9 +4,8 @@
                             comment-dwim-2
                             yasnippet
 			    solarized-theme
+                            hydra
                             rspec-mode))
-
-
 ;;
 ;; ace-window
 ;;
