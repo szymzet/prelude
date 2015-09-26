@@ -23,6 +23,14 @@
 (global-set-key (kbd "C-S-f") (lambda () (interactive) (ignore-errors (forward-char 5))))
 (global-set-key (kbd "C-S-b") (lambda () (interactive) (ignore-errors (backward-char 5))))
 
+;; move by sexp with arrows
+(global-set-key (kbd "<left>") 'sp-backward-sexp)
+(global-set-key (kbd "<right>") 'sp-forward-sexp)
+(global-set-key (kbd "<up>") 'sp-up-sexp)
+(global-set-key (kbd "C-<up>") 'sp-backward-up-sexp)
+(global-set-key (kbd "<down>") 'sp-down-sexp)
+(global-set-key (kbd "C-<down>") 'sp-backward-down-sexp)
+
 ;; gist
 (global-set-key (kbd "C-c g") 'gist-buffer-private)
 (global-set-key (kbd "C-c G") 'gist-list)
@@ -44,6 +52,8 @@
 
 ;; goto line
 (global-set-key (kbd "M-g") 'avy-goto-line)
+;; goto char in line
+(global-set-key (kbd "C-j") 'avy-goto-char-in-line)
 
 ;; super cool marking
 (global-set-key (kbd "M-m") 'easy-mark)
@@ -54,7 +64,9 @@
 ;;
 ;; keychords
 ;;
+(key-chord-define-global "3u" 'undo-tree-undo)
 (key-chord-define-global "3j" 'avy-goto-word-or-subword-1)
+(key-chord-define-global "3l" 'avy-goto-line)
 (key-chord-define-global "fj" 'avy-goto-char-2)
 (key-chord-define-global "3o" 'occur)
 (key-chord-define-global "3k" 'kill-buffer)
