@@ -65,7 +65,7 @@
 ;; keychords
 ;;
 (key-chord-define-global "3u" 'undo-tree-undo)
-(key-chord-define-global "3j" 'avy-goto-word-or-subword-1)
+(key-chord-define-global "3j" 'avy-goto-char-timer)
 (key-chord-define-global "3l" 'avy-goto-line)
 (key-chord-define-global "fj" 'avy-goto-char-2)
 (key-chord-define-global "3o" 'occur)
@@ -83,3 +83,8 @@
 
 ;; dired
 (define-key dired-mode-map (kbd "k") 'dired-do-delete) ; cause it's used in most places
+
+;; zapping zopping zzzing etc.
+(global-set-key (kbd "M-z") 'zzz-to-char) ; simpler than zop, uses avy when multiple occurences
+(global-set-key (kbd "M-Z") 'zzz-up-to-char)
+

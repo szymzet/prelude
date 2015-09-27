@@ -5,7 +5,11 @@
                             yasnippet
 			    solarized-theme
                             hydra
+                            zzz-to-char
                             rspec-mode))
+;; I'm not into spellchecking all the time-add
+(setq prelude-flyspell nil)
+
 ;;
 ;; ace-window
 ;;
