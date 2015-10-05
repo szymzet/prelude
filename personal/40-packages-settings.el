@@ -4,10 +4,18 @@
                             comment-dwim-2
                             yasnippet
 			    solarized-theme
-                            hydra
-                            zzz-to-char
-                            rspec-mode))
-;; I'm not into spellchecking all the time-add
+                            rspec-mode
+			    helm-swoop
+                            spaceline))
+
+;; modeline a'la Spacemacs
+(require 'spaceline-config)
+(setq powerline-height 22)
+(spaceline-spacemacs-theme)
+(set-face-attribute 'mode-line nil :box nil)
+(setq powerline-default-separator 'wave)
+
+;; I'm not into spellchecking all the time
 (setq prelude-flyspell nil)
 
 ;;
@@ -27,11 +35,11 @@
 ;;
 ;; ido
 ;;
-(when (package-installed-p 'ido-vertical-mode)
-  (progn
-    (setq ido-vertical-show-count t)
-    (ido-vertical-mode 1)
-    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+;; (when (package-installed-p 'ido-vertical-mode)
+;;   (progn
+;;     (setq ido-vertical-show-count t)
+;;     (ido-vertical-mode 1)
+;;     (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
 
 ;;
 ;; highlight-symbol
@@ -85,11 +93,10 @@
 ;;
 ;; avy jump
 ;;
-(global-set-key (kbd "C-;") 'avy-goto-word-1)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-                                        ; go to an isearch match using avy
+
 (with-eval-after-load "isearch"
-  (define-key isearch-mode-map (kbd "C-;") 'avy-isearch))
+  (define-key isearch-mode-map (kbd "M-s j") 'avy-isearch))
+(setq avy-case-fold-search nil)
 
 ;;
 ;; projectile
@@ -121,4 +128,6 @@
   (custom-set-faces
    '(flx-highlight-face ((t (:foreground "#268bd2" :underline t :weight bold))))
    '(sp-show-pair-match-face ((t (:underline t))))
-   '(aw-leading-char-face ((t (:foreground "#d33682" :inverse-video t :bold t :height 1.3))))))
+   '(aw-leading-char-face ((t (:foreground "#d33682" :inverse-video t :bold t :height 1.3))))
+   '(mode-line ((t (:underline nil))))
+   '(mode-line-inactive ((t (:underline nil))))))

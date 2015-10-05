@@ -32,7 +32,9 @@
 (setq visible-bell t)
 (setq blink-matching-paren t)
 
-(setq dired-listing-switches "-alh")
+(when (file-executable-p "/usr/local/bin/gls") ; gnu ls on mac, using brew coreutils
+  (setq insert-directory-program "/usr/local/bin/gls"))
+(setq dired-listing-switches "--group-directories-first -alh")
 
 ;;
 ;; grepping
@@ -57,11 +59,12 @@
 (dolist (buffer-regexp my-buffers-to-quickly-clean)
   (add-to-list 'clean-buffer-list-kill-regexps buffer-regexp))
 
-;; when popping the mark, continue popping until the cursor actually moves
+
+;; When popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.
 (defadvice pop-to-mark-command (around ensure-new-position activate)
   (let ((p (point)))
-    (when (eq last-command 'save-region-or-current-line)
+    (when (eq last-command 'kill-ring-save)
       ad-do-it
       ad-do-it
       ad-do-it)

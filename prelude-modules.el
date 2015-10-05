@@ -1,4 +1,5 @@
-(require 'prelude-ido)
+(require 'prelude-helm)
+(require 'prelude-helm-everywhere)
 (require 'prelude-company)
 (require 'prelude-key-chord)
 (require 'prelude-clojure)
