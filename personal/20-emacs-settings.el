@@ -1,3 +1,4 @@
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -6,7 +7,6 @@
 (size-indication-mode -1)
 (column-number-mode -1)
 
-(global-hl-line-mode 1)
 (global-linum-mode -1)
 
 (setq default-indicate-empty-lines t)
@@ -35,6 +35,9 @@
 (when (file-executable-p "/usr/local/bin/gls") ; gnu ls on mac, using brew coreutils
   (setq insert-directory-program "/usr/local/bin/gls"))
 (setq dired-listing-switches "--group-directories-first -alh")
+
+(setq explicit-shell-file-name "/bin/zsh")
+(setq term-buffer-maximum-size 99999)
 
 ;;
 ;; grepping

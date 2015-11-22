@@ -3,17 +3,15 @@
                             highlight-symbol
                             comment-dwim-2
                             yasnippet
-			    solarized-theme
+			    solarized-theme ; themes need to be installed by hand on first installation
+                            monokai-theme
                             rspec-mode
 			    helm-swoop
-                            spaceline))
+                            beacon
+                            hydra))
 
-;; modeline a'la Spacemacs
-(require 'spaceline-config)
-(setq powerline-height 22)
-(spaceline-spacemacs-theme)
-(set-face-attribute 'mode-line nil :box nil)
-(setq powerline-default-separator 'wave)
+(auto-dim-other-buffers-mode -1)
+(setq company-dabbrev-downcase nil)
 
 ;; I'm not into spellchecking all the time
 (setq prelude-flyspell nil)
@@ -26,11 +24,13 @@
                           (?b balance-windows)
                           (?s split-window-right)))
 (setq aw-keys '(?j ?k ?l ?\; ?f ?d))
+(ace-window-display-mode 1)
 
 ;;
 ;; ag
 ;;
 (setq ag-highlight-search t)
+(setq ag-reuse-window t)
 
 ;;
 ;; ido
@@ -40,6 +40,13 @@
 ;;     (setq ido-vertical-show-count t)
 ;;     (ido-vertical-mode 1)
 ;;     (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+
+;;
+;; beacon
+;;
+(setq beacon-blink-duration 0.3)
+(setq beacon-blink-delay 0.15)
+(beacon-mode 1)
 
 ;;
 ;; highlight-symbol
@@ -120,14 +127,22 @@
 ;;
 (global-diff-hl-mode -1)
 
+;;
+;; helm
+;;
+(setq helm-swoop-pre-input-function (lambda () ()))
+
 
 ;;
 ;; faces
 ;;
+(set-face-foreground 'auto-dim-other-buffers-face "#75715E")
+(set-face-background 'auto-dim-other-buffers-face "#171A0B")
 (when (equal prelude-theme 'solarized-light)
   (custom-set-faces
-   '(flx-highlight-face ((t (:foreground "#268bd2" :underline t :weight bold))))
-   '(sp-show-pair-match-face ((t (:underline t))))
-   '(aw-leading-char-face ((t (:foreground "#d33682" :inverse-video t :bold t :height 1.3))))
-   '(mode-line ((t (:underline nil))))
+   ;; solarized-light specific settings might be commented out
+   ;; '(flx-highlight-face ((t (:foreground "#268bd2" :underline t :weight bold))))
+   ;; '(sp-show-pair-match-face ((t (:underline t))))
+   ;; '(aw-leading-char-face ((t (:inverse-video t :bold t :height 1.3))))
+   ;; '(mode-line ((t (:underline nil))))
    '(mode-line-inactive ((t (:underline nil))))))

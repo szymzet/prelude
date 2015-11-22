@@ -1,8 +1,7 @@
-;; regexp by default
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-3") 'split-window-right-and-move-there-dammit)
+(global-set-key (kbd "C-2") 'split-window-below-and-move-there-dammit)
+(global-set-key (kbd "C-1") 'delete-other-windows)
+(global-set-key (kbd "C-0") 'delete-window)
 
 ;; cycle whitespace
 (global-set-key [remap just-one-space] 'cycle-spacing)
@@ -12,7 +11,6 @@
 
 ;; join lines (join line below with current)
 (global-set-key (kbd "M-j") 'prelude-top-join-line)
-
 
 ;; move by sexp with arrows
 (global-set-key (kbd "<left>") 'sp-backward-sexp)
@@ -44,19 +42,18 @@
 ;; goto line
 (global-set-key (kbd "M-g") 'avy-goto-line)
 
-;; avy timed
-(global-set-key (kbd "C-c J") 'avy-goto-char-timer)
-
-;; super cool marking
 (global-set-key (kbd "M-m") 'easy-mark)
 
-(global-set-key (kbd "C-c w") 'ace-window) ; w == window
+(global-set-key (kbd "M-P") 'move-text-up)
+(global-set-key (kbd "M-N") 'move-text-down)
 
 ;;
 ;; keychords
 ;;
 (key-chord-define-global "3u" 'revert-buffer) ; u == bUffer
 (key-chord-define-global "3j" 'avy-goto-char-timer) ; j == jump
+(key-chord-define-global "jk" 'avy-goto-subword-1)
+(key-chord-define-global "jw" 'ace-window) ; Jump Window
 (key-chord-define-global "3o" 'helm-swoop) ; o == occur == swOOp
 (key-chord-define-global "3k" 'kill-buffer)
 (key-chord-define-global "9b" 'helm-mini)
@@ -69,5 +66,7 @@
 (key-chord-define-global "9r" 'anzu-query-replace-regexp)
 (key-chord-define-global "9t" 'delete-trailing-whitespace)
 
-
 (define-key dired-mode-map (kbd "k") 'dired-do-delete) ; cause it's used in most places
+
+(eval-after-load "term"
+  '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
